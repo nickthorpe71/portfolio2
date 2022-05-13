@@ -70,7 +70,7 @@ header a {
   margin-bottom: 20px;
 }
 
-.posts {
+.projects {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
@@ -113,7 +113,7 @@ ol {
 }
 
 @media (max-width: 500px) {
-  .posts {
+  .projects {
     grid-template-columns: 1fr;
   }
 }
