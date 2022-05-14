@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Head from 'next/head';
+import Project from '../components/Project';
+import { sortByDate } from '../utils';
 
 export default function Home({ projects }) {
   return (
@@ -12,7 +14,7 @@ export default function Home({ projects }) {
 
       <div className='projects'>
         {projects.map((project, index) =>
-          <h3>{project.frontmatter.title}</h3>
+          <Project key={index} project={project} />
         )}
       </div>
 
@@ -44,7 +46,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      projects
+      projects: projects.sort(sortByDate)
     }
   }
 }
